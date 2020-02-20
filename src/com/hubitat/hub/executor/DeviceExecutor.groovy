@@ -10,7 +10,7 @@ import hubitat.zwave.Zwave
 
 // https://docs.hubitat.com/index.php?title=Driver_Object
 // https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html
-abstract class DeviceExecutor extends BaseExecutor, Script {
+abstract class DeviceExecutor extends BaseExecutor, DeviceDefinition, DevicePreferences, Script {
 
     InterfaceHelper interfaces
 

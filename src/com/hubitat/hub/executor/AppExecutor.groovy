@@ -5,10 +5,13 @@ import com.hubitat.hub.domain.*
 
 // https://docs.hubitat.com/index.php?title=App_Object
 // https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html
-abstract class AppExecutor extends BaseExecutor, Script {
+abstract class AppExecutor extends BaseExecutor, AppDefinition, AppPreferences, Script {
 
     // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
     Object atomicState
+
+    // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
+    Map<String, String> appSettings
 
     // From https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html#settings
     Map settings
