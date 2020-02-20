@@ -1,6 +1,8 @@
 package hubitat.helper
 
-// https://docs.hubitat.com/index.php?title=HexUtils_Object
+/**
+ * https://docs.hubitat.com/index.php?title=HexUtils_Object
+ */
 class HexUtils {
 
     static String integerToHexString(int value, int minBytes) { '' }

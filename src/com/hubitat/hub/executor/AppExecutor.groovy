@@ -3,28 +3,17 @@ package com.hubitat.hub.executor
 import com.hubitat.app.*
 import com.hubitat.hub.domain.*
 
-// https://docs.hubitat.com/index.php?title=App_Object
-// https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html
-abstract class AppExecutor extends BaseExecutor, AppDefinition, AppPreferences, Script {
+/**
+ * https://docs.hubitat.com/index.php?title=App_Object
+ * https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html
+ */
+abstract class AppExecutor extends BaseExecutor, AppDefinition, AppPreferences {
 
-    // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
-    Object atomicState
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
+    private final Map<String, String> appSettings = [:]
 
-    // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
-    Map<String, String> appSettings
-
-    // From https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html#settings
-    Map settings
-
-    // User defined methods
-
-    abstract void installed()
-
-    abstract void updated()
-
-    abstract void uninstalled()
-
-    // Hubitat Provided Methods
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
+    public final Object atomicState = null
 
     abstract String getApiServerUrl()
 

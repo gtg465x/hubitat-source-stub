@@ -1,10 +1,12 @@
 package com.hubitat.hub.executor
 
-// From https://docs.smartthings.com/en/latest/smartapp-developers-guide/anatomy-and-life-cycle-of-a-smartapp.html#definition
+/**
+ * https://docs.smartthings.com/en/latest/smartapp-developers-guide/anatomy-and-life-cycle-of-a-smartapp.html#definition
+ */
 abstract class AppDefinition {
 
-    abstract def definition(parameters, Closure closure = null)
+    abstract void definition(Map definitionData, Closure closure = null)
 
-    // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
-    abstract def appSetting(String name)
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
+    abstract void appSetting(String name)
 }

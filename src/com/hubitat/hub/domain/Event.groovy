@@ -2,8 +2,10 @@ package com.hubitat.hub.domain
 
 import com.hubitat.app.Device
 
-// https://docs.hubitat.com/index.php?title=Event_Object
-// https://docs.smartthings.com/en/latest/ref-docs/event-ref.html
+/**
+ * https://docs.hubitat.com/index.php?title=Event_Object
+ * https://docs.smartthings.com/en/latest/ref-docs/event-ref.html
+ */
 abstract class Event {
 
     boolean archivable

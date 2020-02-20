@@ -1,7 +1,9 @@
 package com.hubitat.hub.domain
 
-// https://docs.hubitat.com/index.php?title=Hub_Object
-// https://docs.smartthings.com/en/latest/ref-docs/hub-ref.html
+/**
+ * https://docs.hubitat.com/index.php?title=Hub_Object
+ * https://docs.smartthings.com/en/latest/ref-docs/hub-ref.html
+ */
 abstract class Hub {
 
     Long id

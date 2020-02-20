@@ -1,6 +1,8 @@
 package hubitat.helper
 
-// https://docs.hubitat.com/index.php?title=ColorUtils_Object
+/**
+ * https://docs.hubitat.com/index.php?title=ColorUtils_Object
+ */
 class ColorUtils {
 
     static List hexToRGB(String hexRGB) { [] }

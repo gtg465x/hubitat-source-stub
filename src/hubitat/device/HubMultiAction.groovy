@@ -1,6 +1,8 @@
 package hubitat.device
 
-// https://docs.hubitat.com/index.php?title=HubMultiAction_Object
+/**
+ * https://docs.hubitat.com/index.php?title=HubMultiAction_Object
+ */
 class HubMultiAction {
 
     HubMultiAction() {}

@@ -1,7 +1,9 @@
 package com.hubitat.hub.domain
 
-// https://docs.hubitat.com/index.php?title=Location_Object
-// https://docs.smartthings.com/en/latest/ref-docs/location-ref.html
+/**
+ * https://docs.hubitat.com/index.php?title=Location_Object
+ * https://docs.smartthings.com/en/latest/ref-docs/location-ref.html
+ */
 abstract class Location {
 
     Long id
@@ -35,6 +37,6 @@ abstract class Location {
     // ? Return type and param type from https://docs.smartthings.com/en/latest/ref-docs/location-ref.html#setmode
     abstract void setMode(Mode mode)
 
-    // ? From https://docs.smartthings.com/en/latest/ref-docs/location-ref.html#getcurrentmode
+    // https://docs.smartthings.com/en/latest/ref-docs/location-ref.html#getcurrentmode
     abstract Mode getCurrentMode()
 }

@@ -1,40 +1,42 @@
 package com.hubitat.hub.executor
 
-// https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html
+/**
+ * https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html
+ */
 abstract class AppPreferences {
 
-    abstract def preferences(Closure closure)
+    abstract void preferences(Closure closure)
 
-    abstract def page(String name, String title, Closure closure)
+    abstract void page(String name, String title, Closure closure)
 
-    abstract def page(options = null, Closure closure)
+    abstract void page(options = null, Closure closure)
 
-    abstract def dynamicPage(String name, String title, Closure closure)
+    abstract void dynamicPage(String name, String title, Closure closure)
 
-    abstract def dynamicPage(options = null, Closure closure)
+    abstract void dynamicPage(options = null, Closure closure)
 
-    abstract def section(Closure closure)
+    abstract void section(Closure closure)
 
-    abstract def section(String sectionTitle, Closure closure)
+    abstract void section(String sectionTitle, Closure closure)
 
-    abstract def section(options, String sectionTitle = null, Closure closure)
+    abstract void section(options, String sectionTitle = null, Closure closure)
 
-    abstract def paragraph(options = null, String text)
+    abstract void paragraph(options = null, String text)
 
-    abstract def icon(options)
+    abstract void icon(options)
 
-    abstract def href(options)
+    abstract void href(options)
 
-    abstract def mode(options)
+    abstract void mode(options)
 
-    abstract def label(options)
+    abstract void label(options)
 
-    // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/parent-child-smartapps.html
-    abstract def app(options)
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/parent-child-smartapps.html
+    abstract void app(options)
 
-    abstract def input(options = null, String name, String type)
+    abstract void input(options = null, String name, String type)
 
-    abstract def input(options)
+    abstract void input(options)
 
-    abstract def remove(String buttonText, String confirmationText = null, String detailText = null)
+    abstract void remove(String buttonText, String confirmationText = null, String detailText = null)
 }

@@ -1,7 +1,9 @@
 package hubitat.device
 
-// https://docs.hubitat.com/index.php?title=HubAction_Object
-// https://docs.smartthings.com/en/latest/ref-docs/hubaction-ref.html
+/**
+ * https://docs.hubitat.com/index.php?title=HubAction_Object
+ * https://docs.smartthings.com/en/latest/ref-docs/hubaction-ref.html
+ */
 class HubAction {
 
     HubAction() {}

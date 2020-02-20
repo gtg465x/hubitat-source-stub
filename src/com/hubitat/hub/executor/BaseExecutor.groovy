@@ -3,14 +3,29 @@ package com.hubitat.hub.executor
 import com.hubitat.hub.domain.Location
 import groovy.util.slurpersupport.GPathResult
 
-// https://docs.hubitat.com/index.php?title=Common_Methods_Object
-abstract class BaseExecutor {
+/**
+ * https://docs.hubitat.com/index.php?title=Common_Methods_Object
+ */
+abstract class BaseExecutor extends Script {
 
-    // From https://docs.smartthings.com/en/latest/tools-and-ide/logging.html
-    Log log
+    // https://docs.smartthings.com/en/latest/tools-and-ide/logging.html
+    public final Log log = null
 
-    // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
-    Map state
+    // https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html#settings
+    public final Map settings = [:]
+
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
+    public final Map state = [:]
+
+    // User defined methods
+
+    abstract void installed()
+
+    abstract void updated()
+
+    abstract void uninstalled()
+
+    // Hubitat provided methods
 
     abstract Location getLocation()
 
@@ -127,17 +142,17 @@ abstract class BaseExecutor {
 
     abstract Long timeOffset(String hoursAndMinutesString)
 
-    // From https://docs.smartthings.com/en/latest/tools-and-ide/logging.html
+    // https://docs.smartthings.com/en/latest/tools-and-ide/logging.html
     abstract class Log {
 
-        abstract error(String, Throwable = null)
+        abstract void error(String message, Throwable thrown = null)
 
-        abstract warn(String, Throwable = null)
+        abstract void warn(String message, Throwable thrown = null)
 
-        abstract info(String, Throwable = null)
+        abstract void info(String message, Throwable thrown = null)
 
-        abstract debug(String, Throwable = null)
+        abstract void debug(String message, Throwable thrown = null)
 
-        abstract trace(String, Throwable = null)
+        abstract void trace(String message, Throwable thrown = null)
     }
 }

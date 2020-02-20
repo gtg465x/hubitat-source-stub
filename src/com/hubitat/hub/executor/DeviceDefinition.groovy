@@ -1,17 +1,20 @@
 package com.hubitat.hub.executor
 
-// From https://docs.smartthings.com/en/latest/device-type-developers-guide/definition-metadata.html
+/**
+ * https://docs.smartthings.com/en/latest/device-type-developers-guide/definition-metadata.html
+ * https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html
+ */
 abstract class DeviceDefinition {
 
-    abstract def metadata(Closure closure)
+    abstract void metadata(Closure closure)
 
-    abstract def definition(parameters, Closure closure = null)
+    abstract void definition(Map definitionData, Closure closure = null)
 
-    abstract def capability(String capabilityName)
+    abstract void capability(String capabilityName)
 
-    abstract def attribute(String attributeName, String attributeType, List possibleValues = null)
+    abstract void attribute(String attributeName, String attributeType, List possibleValues = null)
 
-    abstract def command(String commandName, List parameterTypes = [])
+    abstract void command(String commandName, List parameterTypes = [])
 
-    abstract def fingerprint(parameters)
+    abstract void fingerprint(parameters)
 }

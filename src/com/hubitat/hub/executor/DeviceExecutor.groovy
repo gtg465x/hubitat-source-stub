@@ -8,32 +8,38 @@ import hubitat.helper.InterfaceHelper
 import hubitat.zigbee.Zigbee
 import hubitat.zwave.Zwave
 
-// https://docs.hubitat.com/index.php?title=Driver_Object
-// https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html
-abstract class DeviceExecutor extends BaseExecutor, DeviceDefinition, DevicePreferences, Script {
+/**
+ * https://docs.hubitat.com/index.php?title=Driver_Object
+ * https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html
+ */
+abstract class DeviceExecutor extends BaseExecutor, DeviceDefinition, DevicePreferences {
 
-    InterfaceHelper interfaces
+    public final InterfaceHelper interfaces = null
 
-    // User defined methods - guessed return types
+    public final Zwave zwave = null
 
-    abstract void parse(String message)
+    public final Zigbee zigbee = null
 
-    // From https://docs.hubitat.com/index.php?title=EventStream_Interface
-    abstract void eventStreamStatus(String message)
+    // User defined methods with undocumented return types
 
-    // From https://docs.hubitat.com/index.php?title=Telnet_Interface
-    abstract void telnetStatus(String message)
+    abstract def parse(String message)
+
+    // https://docs.hubitat.com/index.php?title=EventStream_Interface
+    abstract def eventStreamStatus(String message)
+
+    // https://docs.hubitat.com/index.php?title=Telnet_Interface
+    abstract def telnetStatus(String message)
 
     // https://docs.hubitat.com/index.php?title=Websocket_Interface
-    abstract void webSocketStatus(String message)
+    abstract def webSocketStatus(String message)
 
     // https://docs.hubitat.com/index.php?title=Raw_Socket_Interface
-    abstract void socketStatus(String message)
+    abstract def socketStatus(String message)
 
     // https://docs.hubitat.com/index.php?title=MQTT_Interface
-    abstract void mqttClientStatus(String message)
+    abstract def mqttClientStatus(String message)
 
-    // Hubitat Provided Methods
+    // Hubitat provided methods
 
     abstract void sendHubCommand(HubAction hubAction)
 
