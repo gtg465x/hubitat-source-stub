@@ -1,8 +1,11 @@
-package hubitat
+package com.hubitat.hub.executor
+
+import com.hubitat.app.*
+import com.hubitat.hub.domain.*
 
 // https://docs.hubitat.com/index.php?title=App_Object
 // https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html
-abstract class App extends CommonMethods, Script {
+abstract class AppExecutor extends BaseExecutor, Script {
 
     // From https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
     Object atomicState
@@ -38,25 +41,61 @@ abstract class App extends CommonMethods, Script {
 
     abstract void unsubscribe(List<DeviceWrapper> deviceList)
 
+    /**
+     * @since 2.0.7
+     */
     abstract void unsubscribe(DeviceWrapper device, String attributeName)
 
+    /**
+     * @since 2.1.0
+     */
     abstract void unsubscribe(List<DeviceWrapper> deviceList, String attributeName)
 
+    /**
+     * @since 2.1.0
+     */
     abstract void unsubscribe(DeviceWrapper device, String attributeName, String handlerMethod)
 
+    /**
+     * @since 2.1.0
+     */
     abstract void unsubscribe(List<DeviceWrapper> deviceList, String attributeName, String handlerMethod)
 
+    /**
+     * @since 2.1.2
+     */
     abstract void unsubscribe(InstalledAppWrapper installedApp)
 
+    /**
+     * @since 2.1.2
+     */
     abstract void unsubscribe(Location location)
 
+    /**
+     * @since 2.1.2
+     */
     abstract void unsubscribe(Location location, String attributeName)
 
+    /**
+     * @since 2.1.2
+     */
     abstract void unsubscribe(String handlerMethod)
 
+    /**
+     * @since 2.1.9
+     */
     abstract ChildDeviceWrapper addChildDevice(String namespace, String typeName, String deviceNetworkId)
 
+    /**
+     * @since 2.1.9
+     */
     abstract ChildDeviceWrapper addChildDevice(String namespace, String typeName, String deviceNetworkId, Map properties)
+
+    @Deprecated
+    abstract ChildDeviceWrapper addChildDevice(String namespace, String typeName, String deviceNetworkId, Long hubId)
+
+    @Deprecated
+    abstract ChildDeviceWrapper addChildDevice(String namespace, String typeName, String deviceNetworkId, Long hubId, Map properties)
 
     abstract List<ChildDeviceWrapper> getChildDevices()
 

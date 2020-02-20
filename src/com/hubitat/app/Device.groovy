@@ -1,4 +1,6 @@
-package hubitat
+package com.hubitat.app
+
+import com.hubitat.hub.domain.*
 
 // https://docs.hubitat.com/index.php?title=Device_Object
 // https://docs.smartthings.com/en/latest/ref-docs/device-ref.html

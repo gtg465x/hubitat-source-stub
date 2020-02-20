@@ -1,13 +1,18 @@
-package hubitat
+package com.hubitat.hub.executor
 
+import com.hubitat.app.ChildDeviceWrapper
+import com.hubitat.hub.domain.Event
+import hubitat.device.HubAction
+import hubitat.device.HubMultiAction
+import hubitat.helper.InterfaceHelper
 import hubitat.zigbee.Zigbee
 import hubitat.zwave.Zwave
 
 // https://docs.hubitat.com/index.php?title=Driver_Object
 // https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html
-abstract class Driver extends CommonMethods, Script {
+abstract class DeviceExecutor extends BaseExecutor, Script {
 
-    Interfaces interfaces
+    InterfaceHelper interfaces
 
     // User defined methods - guessed return types
 

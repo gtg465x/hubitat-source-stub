@@ -1,4 +1,4 @@
-package hubitat
+package hubitat.device
 
 // https://docs.hubitat.com/index.php?title=Protocol_Object
 enum Protocol {

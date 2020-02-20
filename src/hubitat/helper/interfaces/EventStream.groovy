@@ -1,7 +1,7 @@
-package hubitat
+package hubitat.helper.interfaces
 
 // https://docs.hubitat.com/index.php?title=EventStream_Interface
-abstract class EventStreamInterface {
+abstract class EventStream {
 
     abstract void connect(String url, Map options = null)
 

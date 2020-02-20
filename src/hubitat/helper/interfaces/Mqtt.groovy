@@ -1,7 +1,11 @@
-package hubitat
+package hubitat.helper.interfaces
 
-// https://docs.hubitat.com/index.php?title=MQTT_Interface
-abstract class MQTTInterface {
+/**
+ * https://docs.hubitat.com/index.php?title=MQTT_Interface
+ *
+ * @since 2.1.2
+ */
+abstract class Mqtt {
 
     abstract void connect(String broker, String clientId, String username, String password, Map options = null)
 

@@ -1,6 +1,7 @@
 package hubitat.zigbee
 
 // https://docs.hubitat.com/index.php?title=Zigbee_Object
+// https://docs.smartthings.com/en/latest/ref-docs/zigbee-ref.html
 abstract class Zigbee {
 
     // Undocumented value
