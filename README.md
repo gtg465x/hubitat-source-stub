@@ -11,8 +11,8 @@ A few methods and properties from the [SmartThings Classic Developer Documentati
 For apps:
 ```groovy
 /** For development only. Do not copy to Hubitat. */
-import groovy.transform.BaseScript
 import com.hubitat.hub.executor.AppExecutor
+import groovy.transform.BaseScript
 
 @BaseScript AppExecutor appExecutor
 /**************************************************/
@@ -20,8 +20,8 @@ import com.hubitat.hub.executor.AppExecutor
 For drivers:
 ```groovy
 /** For development only. Do not copy to Hubitat. */
-import groovy.transform.BaseScript
 import com.hubitat.hub.executor.DeviceExecutor
+import groovy.transform.BaseScript
 
 @BaseScript DeviceExecutor deviceExecutor
 /**************************************************/
@@ -31,12 +31,12 @@ You may also want autocomplete for your settings objects, in which case you can 
 
 Input:
 ```groovy
-input "motionSensor", "capability.motionSensor", title: "Select Motion Sensor", required: true
+input "motionSensor", "capability.motionSensor", title: "Select Motion Sensor"
 ```
 Field:
 ```groovy
+import com.hubitat.app.DeviceWrapper
 import groovy.transform.Field
-import com.hubitat.app.Device
 
-@Field Device motionSensor
+@Field DeviceWrapper motionSensor
 ```
