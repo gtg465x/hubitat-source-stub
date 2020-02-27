@@ -9,11 +9,14 @@ import com.hubitat.hub.domain.*
  */
 abstract class AppExecutor extends BaseExecutor, AppDefinition, AppPreferences {
 
-    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
-    private final Map<String, String> appSettings = [:]
+    // https://docs.smartthings.com/en/latest/ref-docs/installed-smart-app-wrapper-ref.html
+    public final InstalledApp app
 
-    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
-    public final Object atomicState = null
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
+    public final Map<String, String> appSettings
+
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html#state-and-atomic-state-overview
+    public final Object atomicState
 
     abstract String getApiServerUrl()
 
@@ -134,8 +137,6 @@ abstract class AppExecutor extends BaseExecutor, AppDefinition, AppPreferences {
     abstract void sendEvent(String dni, Map properties)
 
     abstract List<Event> getLocationEventsSince(String attributeName, Date startDate, Map options = null)
-
-    abstract void subscribe(Object thing, String attributeName, handlerMethod, Map options = null)
 
     abstract List<InstalledApp> getAllChildApps()
 

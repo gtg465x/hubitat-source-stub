@@ -9,13 +9,16 @@ import groovy.util.slurpersupport.GPathResult
 abstract class BaseExecutor extends Script {
 
     // https://docs.smartthings.com/en/latest/tools-and-ide/logging.html
-    public final Log log = null
+    public final Log log
 
     // https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html#settings
-    public final Map settings = [:]
+    public final Map settings
 
-    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html
-    public final Map state = [:]
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html#state-and-atomic-state-overview
+    public final Map state
+
+    // https://docs.smartthings.com/en/latest/ref-docs/location-ref.html
+    public final Location location
 
     // User defined methods
 

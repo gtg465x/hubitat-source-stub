@@ -7,19 +7,19 @@ abstract class AppPreferences {
 
     abstract void preferences(Closure closure)
 
-    abstract void page(String name, String title, Closure closure)
+    abstract void page(String name, String title, Closure closure = null)
 
-    abstract void page(options = null, Closure closure)
+    abstract void page(options = null, Closure closure = null)
 
-    abstract void dynamicPage(String name, String title, Closure closure)
+    abstract void dynamicPage(String name, String title, Closure closure = null)
 
-    abstract void dynamicPage(options = null, Closure closure)
+    abstract void dynamicPage(options = null, Closure closure = null)
 
-    abstract void section(Closure closure)
+    abstract void section(Closure closure = null)
 
-    abstract void section(String sectionTitle, Closure closure)
+    abstract void section(String sectionTitle, Closure closure = null)
 
-    abstract void section(options, String sectionTitle = null, Closure closure)
+    abstract void section(options, String sectionTitle = null, Closure closure = null)
 
     abstract void paragraph(options = null, String text)
 

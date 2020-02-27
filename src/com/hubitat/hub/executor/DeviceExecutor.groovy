@@ -1,11 +1,13 @@
 package com.hubitat.hub.executor
 
 import com.hubitat.app.ChildDeviceWrapper
+import com.hubitat.app.Device
 import com.hubitat.hub.domain.Event
 import hubitat.device.HubAction
 import hubitat.device.HubMultiAction
 import hubitat.helper.InterfaceHelper
 import hubitat.zigbee.Zigbee
+import hubitat.zwave.Command
 import hubitat.zwave.Zwave
 
 /**
@@ -14,11 +16,14 @@ import hubitat.zwave.Zwave
  */
 abstract class DeviceExecutor extends BaseExecutor, DeviceDefinition, DevicePreferences {
 
-    public final InterfaceHelper interfaces = null
+    // https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html#device
+    public final Device device
 
-    public final Zwave zwave = null
+    public final InterfaceHelper interfaces
 
-    public final Zigbee zigbee = null
+    public final Zwave zwave
+
+    public final Zigbee zigbee
 
     // User defined methods with undocumented return types
 
@@ -69,7 +74,7 @@ abstract class DeviceExecutor extends BaseExecutor, DeviceDefinition, DevicePref
 
     abstract HubAction response(String cmd)
 
-    abstract HubAction response(hubitat.zwave.Command cmd)
+    abstract HubAction response(Command cmd)
 
     abstract HubMultiAction response(List cmds)
 
