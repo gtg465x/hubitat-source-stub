@@ -41,7 +41,8 @@ abstract class Event {
 
     abstract String getDisplayName()
 
-    abstract String getDeviceId()
+    // Documentation says this returns a String, but I got a Long
+    abstract Long getDeviceId()
 
     abstract Device getDevice()
 
