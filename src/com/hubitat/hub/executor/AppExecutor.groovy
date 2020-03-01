@@ -7,7 +7,7 @@ import com.hubitat.hub.domain.*
  * https://docs.hubitat.com/index.php?title=App_Object
  * https://docs.smartthings.com/en/latest/ref-docs/smartapp-ref.html
  */
-abstract class AppExecutor extends BaseExecutor, AppDefinition, AppPreferences {
+abstract class AppExecutor extends BaseExecutor {
 
     // https://docs.smartthings.com/en/latest/ref-docs/installed-smart-app-wrapper-ref.html
     public final InstalledApp app
@@ -17,6 +17,54 @@ abstract class AppExecutor extends BaseExecutor, AppDefinition, AppPreferences {
 
     // https://docs.smartthings.com/en/latest/smartapp-developers-guide/state.html#state-and-atomic-state-overview
     public final Object atomicState
+
+    // App definition methods
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/anatomy-and-life-cycle-of-a-smartapp.html#definition
+
+    abstract void definition(Map definitionData, Closure closure = null)
+
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html#private-settings
+    abstract void appSetting(String name)
+
+    // App preferences methods
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/preferences-and-settings.html
+
+    abstract void preferences(Closure closure)
+
+    abstract void page(String name, String title, Closure closure = null)
+
+    abstract void page(options = null, Closure closure = null)
+
+    abstract void dynamicPage(String name, String title, Closure closure = null)
+
+    abstract void dynamicPage(options = null, Closure closure = null)
+
+    abstract void section(Closure closure = null)
+
+    abstract void section(String sectionTitle, Closure closure = null)
+
+    abstract void section(options, String sectionTitle = null, Closure closure = null)
+
+    abstract void paragraph(options = null, String text)
+
+    abstract void icon(options)
+
+    abstract void href(options)
+
+    abstract void mode(options)
+
+    abstract void label(options)
+
+    // https://docs.smartthings.com/en/latest/smartapp-developers-guide/parent-child-smartapps.html
+    abstract void app(options)
+
+    abstract void input(options = null, String name, String type)
+
+    abstract void input(options)
+
+    abstract void remove(String buttonText, String confirmationText = null, String detailText = null)
+
+    // End of app preferences methods
 
     abstract String getApiServerUrl()
 

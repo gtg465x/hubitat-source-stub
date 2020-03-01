@@ -14,7 +14,7 @@ import hubitat.zwave.Zwave
  * https://docs.hubitat.com/index.php?title=Driver_Object
  * https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html
  */
-abstract class DeviceExecutor extends BaseExecutor, DeviceDefinition, DevicePreferences {
+abstract class DeviceExecutor extends BaseExecutor {
 
     // https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html#device
     public final Device device
@@ -24,6 +24,31 @@ abstract class DeviceExecutor extends BaseExecutor, DeviceDefinition, DevicePref
     public final Zwave zwave
 
     public final Zigbee zigbee
+
+    // Device definition methods
+    // https://docs.smartthings.com/en/latest/device-type-developers-guide/definition-metadata.html
+    // https://docs.smartthings.com/en/latest/ref-docs/device-handler-ref.html
+
+    abstract void metadata(Closure closure)
+
+    abstract void definition(Map definitionData, Closure closure = null)
+
+    abstract void capability(String capabilityName)
+
+    abstract void attribute(String attributeName, String attributeType, List possibleValues = null)
+
+    abstract void command(String commandName, List parameterTypes = [])
+
+    abstract void fingerprint(parameters)
+
+    // Device preferences methods
+    // https://docs.smartthings.com/en/latest/device-type-developers-guide/device-preferences.html
+
+    abstract void preferences(Closure closure)
+
+    abstract void input(options = null, String name, String type)
+
+    abstract void input(options)
 
     // User defined methods with undocumented return types
 
